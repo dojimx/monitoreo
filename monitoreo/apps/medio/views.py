@@ -1,5 +1,9 @@
 from django.shortcuts import render
 
+from django.views.generic import ListView
+
+from apps.medio.models import Medio
+
 
 # Create your views here.
 
@@ -14,3 +18,8 @@ def eliminar(request):
 		
 def listar(request):
 	return render(request, 'medio/listar.html')
+
+
+class MedioList(ListView):
+	model = Medio
+	template_name = 'medio/listar.html'
