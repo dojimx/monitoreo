@@ -5,7 +5,7 @@ from django.conf import settings
 
 urlpatterns = [
    path('', index),
-   path('crear/', MedioCreate.as_view(), name='medio_crear'),
+   path('nuevo/', MedioCreate.as_view(), name='medio_crear'),
    path('listar/', MedioList.as_view(), name='medio_listar'),
    path('editar/', editar),
    path('eliminar/', eliminar)
