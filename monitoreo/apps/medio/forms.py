@@ -25,7 +25,7 @@ class MedioForm(forms.ModelForm):
 		widgets = {
 			'nombre' : forms.TextInput(attrs={'class' : 'form-control'}),
 			'url' : forms.TextInput(attrs={'class' : 'form-control'}),
-			'tipo' : forms.TextInput(attrs={'class' : 'form-control'}),
+			'tipo' : forms.Select(attrs={'class' : 'form-control'}),
 			'usuario' : forms.Select(attrs={'class' : 'form-control'}),
 			
 		}
