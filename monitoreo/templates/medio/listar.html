@@ -20,17 +20,19 @@
                   <th>url</th>
                   <th>tipo</th>
                   <th>usuario</th>
+                  <th>Acciones</th>
                  
                 </tr>
                 </thead>
                 <tbody>
-                  {% if medios %}
-                  {% for medio in medios %}
+                  {% if object_list %}
+                  {% for medio in object_list %}
                 <tr>
                   <td>{{medio.nombre}}</td>
                   <td>{{medio.url}}</td>
                   <td>{{medio.tipo}}</td>
-                  <td>{{medio.usuario}}</td>
+                  <td>{{medio.usuario}} {{medio.usuario.apellido_paterno}}</td>
+                  <td> <a class="btn btn-primary" href="">Editar</a>  <a class="btn btn-primary" href="">Eliminar</a></td>                 
                 </tr>
                 {% endfor %}
                 
