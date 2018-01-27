@@ -12,7 +12,8 @@
            <form method ="post">
              {% csrf_token %}
              {{ form.as_p }}
-             <button type="submit">Guardar</button>
+             <button class="btn btn-default" type="submit">Guardar</button>
+             <a class="btn btn-default" href=" {% url 'medio_listar' %}">Cancelar</a>
            </form>
 
             </div>
