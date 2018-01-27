@@ -1,4 +1,7 @@
+{% extends 'base/base.html' %}
+{% block content %}
 <!-- general form elements disabled -->
+
           <div class="box box-warning">
             <div class="box-header with-border">
               <h3 class="box-title">General Elements</h3>
@@ -25,3 +28,5 @@
                   <label>Textarea Disabled</label>
                   <textarea class="form-control" rows="3" placeholder="Enter ..." disabled></textarea>
                 </div>
+
+                {% endblock %}
