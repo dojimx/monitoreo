@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
 from apps.medio.models import Medio
 from apps.medio.forms import MedioForm
@@ -37,3 +37,8 @@ class MedioUpdate(UpdateView):
 	template_name = 'medio/nuevo.html'
 	success_url = reverse_lazy ('medio_listar')
 
+class MedioDelete(DeleteView):
+	model = Medio
+	form_class = MedioForm
+	template_name = 'medio/eliminar.html'
+	success_url = reverse_lazy ('medio_listar')
