@@ -8,5 +8,5 @@ urlpatterns = [
    path('nuevo/', MedioCreate.as_view(), name='medio_crear'),
    path('listar/', MedioList.as_view(), name='medio_listar'),
    path('editar/<pk>/', MedioUpdate.as_view(), name='medio_editar'),
-   path('eliminar/<pk>/', MedioDelete.as_view() name='medio_eliminar')
+   path('eliminar/<pk>/', MedioDelete.as_view(), name='medio_eliminar')
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
