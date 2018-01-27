@@ -1,8 +1,9 @@
 from django.shortcuts import render
-
-from django.views.generic import ListView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, CreateView
 
 from apps.medio.models import Medio
+from apps.medio.forms import MedioForm
 
 
 # Create your views here.
@@ -23,3 +24,9 @@ def listar(request):
 class MedioList(ListView):
 	model = Medio
 	template_name = 'medio/listar.html'
+
+class MedioCreate(CreateView):
+	model = Medio
+	form_class = MedioForm
+	template_name = 'medio/nuevo.html'
+	success_url = reverse_lazy ('medio_listar')
