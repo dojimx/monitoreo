@@ -1,1 +1,46 @@
 {% extends 'base/base.html' %}
+
+ {% block seccion %}
+      <h1>
+        Medios
+        <small>Editar</small>
+      </h1>
+      {% endblock %}
+
+  {% block title %} 
+    <title>Medios - Editar</title> 
+  {% endblock %}
+
+    {% block breadcrumb %}
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
+        <li><a href="{% url 'medio_listar' %}">Medios</a></li>
+        <li class="active" href="{% url 'medio_crear' %}">Editar</li>
+      </ol>
+     {% endblock %}
+
+{% block content %}
+<!-- general form elements disabled -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+          
+            <div class="box-header with-border">
+              <h3 class="box-title">Datos Generales</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+             <form method ="post">
+               {% csrf_token %}
+               {{ form.as_p }}
+               <button class="btn btn-default" type="submit">Guardar Cambios</button>
+               <a class="btn btn-default" href=" {% url 'medio_listar' %}">Cancelar</a>
+             </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
