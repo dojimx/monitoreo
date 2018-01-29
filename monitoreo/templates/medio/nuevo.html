@@ -2,19 +2,19 @@
 
  {% block seccion %}
       <h1>
-        Medios
+        Medio
         <small>Crear</small>
       </h1>
       {% endblock %}
 
   {% block title %} 
-    <title>Medios - Nuevo</title> 
+    <title>Medio - Nuevo</title> 
   {% endblock %}
 
     {% block breadcrumb %}
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
-        <li><a href="{% url 'medio_listar' %}">Medios</a></li>
+        <li><a href="{% url 'medio_listar' %}">Medio</a></li>
         <li class="active" href="{% url 'medio_crear' %}">Nuevo</li>
       </ol>
      {% endblock %}

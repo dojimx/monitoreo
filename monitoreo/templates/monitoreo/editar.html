@@ -2,20 +2,20 @@
 
  {% block seccion %}
       <h1>
-        Usuario
+        Monitoreo
         <small>Editar</small>
       </h1>
       {% endblock %}
 
   {% block title %} 
-    <title>Usuario - Editar</title> 
+    <title>Monitoreo - Editar</title> 
   {% endblock %}
 
     {% block breadcrumb %}
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
-        <li><a href="{% url 'usuario_listar' %}">Usuario</a></li>
-        <li class="active" href="{% url 'usuario_crear' %}">Editar</li>
+        <li><a href="{% url 'monitoreo_listar' %}">Monitoreo</a></li>
+        <li class="active" href="{% url 'monitoreo_crear' %}">Editar</li>
       </ol>
      {% endblock %}
 
@@ -35,7 +35,7 @@
                {% csrf_token %}
                {{ form.as_p }}
                <button class="btn btn-default" type="submit">Guardar Cambios</button>
-               <a class="btn btn-default" href=" {% url 'usuario_listar' %}">Cancelar</a>
+               <a class="btn btn-default" href=" {% url 'monitoreo_listar' %}">Cancelar</a>
              </form>
             </div>
           </div>
