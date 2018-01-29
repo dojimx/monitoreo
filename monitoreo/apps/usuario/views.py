@@ -21,23 +21,23 @@ def listar(request):
 	return render(request, 'usuario/listar.html')
 
 
-class MedioList(ListView):
+class UsuarioList(ListView):
 	model = Usuario
 	template_name = 'usuario/listar.html'
 
-class MedioCreate(CreateView):
+class UsuarioCreate(CreateView):
 	model = Usuario
 	form_class = UsuarioForm
 	template_name = 'usuario/nuevo.html'
 	success_url = reverse_lazy ('usuario_listar')
 
-class MedioUpdate(UpdateView):
+class UsuarioUpdate(UpdateView):
 	model = Usuario
 	form_class = UsuarioForm
 	template_name = 'usuario/nuevo.html'
 	success_url = reverse_lazy ('usuario_listar')
 
-class MedioDelete(DeleteView):
+class UsuarioDelete(DeleteView):
 	model = Usuario
 	form_class = UsuarioForm
 	template_name = 'usuario/eliminar.html'

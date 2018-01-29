@@ -1,5 +1,5 @@
-from usuario.models import Usuario 
-
+from django import forms
+from apps.usuario.models import Usuario
 
 
 class UsuarioForm(forms.ModelForm):
@@ -29,7 +29,7 @@ class UsuarioForm(forms.ModelForm):
 			'nombre' : forms.TextInput(attrs={'class' : 'form-control'}),
 			'apellido_paterno' : forms.TextInput(attrs={'class' : 'form-control'}),
 			'apellido_materno' : forms.TextInput(attrs={'class' : 'form-control'}),
-			'sexo' : forms.TextInput(attrs={'class' : 'form-control'}),
+			'sexo' : forms.Select(attrs={'class' : 'form-control'}),
 			'correo' : forms.TextInput(attrs={'class' : 'form-control'}),
 			'telefono' : forms.TextInput(attrs={'class' : 'form-control'}),
 		}

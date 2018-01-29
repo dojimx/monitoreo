@@ -1,5 +1,23 @@
 {% extends 'base/base.html' %}
 
+      {% block seccion %}
+      <h1>
+        Usuario
+        <small>Listar</small>
+      </h1>
+      {% endblock %}
+
+  {% block title %} 
+    <title>Usuario - Listar</title> 
+  {% endblock %}
+
+    {% block breadcrumb %}
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
+        <li><a href="{% url 'usuario_listar' %}">usuario</a></li>
+        <li class="active" href="{% url 'usuario_listar'  %}">Listar</li>
+      </ol>
+     {% endblock %}
 
 {% block content %}
   <!-- Main content -->
@@ -8,25 +26,20 @@
         <div class="col-xs-12">
          <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Tabla que pidio el jefe</h3>
-              <a type="button" class="btn btn-primary" href=" {% url 'usuario_crear' %}">Añadir</a>
+              <a type="button" class="btn btn-primary" href=" {% url 'usuario_crear' %}">Añadir nuevo usuario</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>nombre</th>
+                  <th>Nombre</th>
                   <th>apellido_paterno</th>
                   <th>apellido_materno</th>
                   <th>sexo</th>
-
                   <th>correo</th>
                   <th>telefono</th>
 
-                  
-
-                 
                 </tr>
                 </thead>
                 <tbody>
@@ -34,11 +47,12 @@
                   {% for usuario in object_list %}
                 <tr>
                   <td>{{usuario.nombre}}</td>
-                  <td>{{usuario.url}}</td>
-                  <td>{{usuario.tipo}}</td>
-
-                  <td>{{usuario.usuario}} {{usuario.usuario.apellido_paterno}}</td>
-                  <td> <a class="btn btn-primary" href="{% url 'usuario_editar' usuario.id %}">Editar</a>  <a class="btn btn-primary" href="{% url 'usuario_eliminar' usuario.id %}">Eliminar</a></td>                
+                  <td> {{usuario.apellido_paterno}}</td>
+                   <td>{{usuario.apellido_materno}}</td>
+                  <td>{{usuario.sexo}}</td>
+                  <td>{{usuario.correo}}</td>
+                  <td>{{usuario.telefono}}</td>
+                  <td>{{usuario.acciones}} <a class="btn btn-primary" href="{% url 'usuario_editar' usuario.id %}">Editar</a>  <a class="btn btn-primary" href="{% url 'usuario_eliminar' usuario.id %}">Eliminar</a></td>                
                  
                  
                     
@@ -48,7 +62,7 @@
                 {% endfor %}
                 
                 {% else %}
-                <h1> No hay registro de usuario</h1>
+                <h1> No hay registro de usuarios</h1>
 
                 {% endif %}
                 
@@ -64,6 +78,5 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
-  </div>
 
   {% endblock %}

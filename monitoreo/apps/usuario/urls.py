@@ -1,5 +1,5 @@
-from django.urls import path,include
-from apps.usuario.views import index,editar,eliminar,UsuarioList,UsuarioCreate, UsuarioUpdate, UsuarioDelete
+from django.urls import path,include 
+from apps.usuario.views import index,UsuarioList,UsuarioCreate, UsuarioUpdate, UsuarioDelete
 from django.conf.urls.static import static
 from django.conf import settings
 
