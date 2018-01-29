@@ -1,10 +1,10 @@
 from django.urls import path,include 
-from apps.usuario.views import index,UsuarioList,UsuarioCreate, UsuarioUpdate, UsuarioDelete
+from apps.usuario.views import UsuarioList,UsuarioCreate, UsuarioUpdate, UsuarioDelete
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-   path('', index),
+   path('',   UsuarioList.as_view(), name='usuario_listar'),
    path('nuevo/', UsuarioCreate.as_view(), name='usuario_crear'),
    path('listar/', UsuarioList.as_view(), name='usuario_listar'),
    path('editar/<pk>/', UsuarioUpdate.as_view(), name='usuario_editar'),

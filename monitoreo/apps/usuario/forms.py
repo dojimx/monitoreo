@@ -4,7 +4,7 @@ from apps.usuario.models import Usuario
 
 class UsuarioForm(forms.ModelForm):
 
-	class User: 
+	class Meta: 
 		model = Usuario 
 
 		fields = [
