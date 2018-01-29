@@ -33,17 +33,7 @@
             <div class="box-body">
              <form method ="post">
                {% csrf_token %}
-              
-
-              <div class="box-body">
-              <form role="form">
-                <!-- text input -->
-                <div class="form-group">
-                  <label>Text</label>
-                  <input type="text" class="form-control" placeholder="Enter ...">
-                </div>
-              </form>
-            </div>
+               {{ form.as_p }}
                <button class="btn btn-default" type="submit">Guardar</button>
                <a class="btn btn-default" href=" {% url 'usuario_listar' %}">Cancelar</a>
              </form>
