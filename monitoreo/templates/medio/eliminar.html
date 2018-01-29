@@ -1,11 +1,43 @@
 {% extends 'base/base.html' %}
 
-{% block content %}
-<form method ="post">
-             {% csrf_token %}
-             <h3>¿desas eliminar el medio <strong>{{medio.nombre}}</strong>?</h3>
-             <button class="btn btn-danger" type="submit">Eliminar</button>
-             <a class="btn btn-default" href=" {% url 'medio_listar' %}">Cancelar</a>
-           </form>
+ {% block seccion %}
+      <h1>
+        Medios
+        <small>Eliminar</small>
+      </h1>
+      {% endblock %}
 
-                 {% endblock %}          
+  {% block title %} 
+    <title>Medios Eliminar</title> 
+  {% endblock %}
+
+    {% block breadcrumb %}
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
+        <li><a href="{% url 'medio_listar' %}">Medios</a></li>
+        <li class="active" href="{% url 'medio_eliminar'  medio.id %}">Eliminar</li>
+      </ol>
+     {% endblock %}
+
+
+{% block content %}
+
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+         <div class="box">
+          <div class="box-body">
+          <form method ="post">
+                       {% csrf_token %}
+                       <h3>¿desas eliminar el medio <strong>{{medio.nombre}}</strong>?</h3>
+               
+                       <button class="btn btn-danger" type="submit">Eliminar</button>
+                       <a class="btn btn-default" href=" {% url 'medio_listar' %}">Cancelar</a>
+          </form>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}          

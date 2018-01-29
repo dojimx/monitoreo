@@ -1,5 +1,23 @@
 {% extends 'base/base.html' %}
 
+      {% block seccion %}
+      <h1>
+        Medios
+        <small>Listar</small>
+      </h1>
+      {% endblock %}
+
+  {% block title %} 
+    <title>Medios - Listar</title> 
+  {% endblock %}
+
+    {% block breadcrumb %}
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
+        <li><a href="{% url 'medio_listar' %}">Medios</a></li>
+        <li class="active" href="{% url 'medio_listar'  %}">Listar</li>
+      </ol>
+     {% endblock %}
 
 {% block content %}
   <!-- Main content -->
@@ -8,24 +26,18 @@
         <div class="col-xs-12">
          <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Tabla que pidio el jefe</h3>
-              <a type="button" class="btn btn-primary" href=" {% url 'medio_crear' %}">Añadir</a>
+              <a type="button" class="btn btn-primary" href=" {% url 'medio_crear' %}">Añadir nuevo medio</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>nombre</th>
-                  <th>url</th>
-                  <th>tipo</th>
-                  <th>usuario</th>
-
-                  <th>Acciones</th>
-
-                  
-
-                 
+                  <th>Nombre</th>
+                  <th>Sitio Web</th>
+                  <th>Tipo</th>
+                  <th>Usuario encargado</th>
+                  <th>Acciones a realizar</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -36,7 +48,7 @@
                   <td>{{medio.url}}</td>
                   <td>{{medio.tipo}}</td>
 
-                  <td>{{medio.usuario}} {{medio.usuario.apellido_paterno}}</td>
+                  <td>{{medio.usuario}} {{medio.usuario.apellido_paterno}} {{medio.usuario.apellido_materno}}</td>
                   <td> <a class="btn btn-primary" href="{% url 'medio_editar' medio.id %}">Editar</a>  <a class="btn btn-primary" href="{% url 'medio_eliminar' medio.id %}">Eliminar</a></td>                
                  
                  
@@ -63,6 +75,5 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
-  </div>
 
   {% endblock %}
