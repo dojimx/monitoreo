@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<!-- general form elements disabled -->
+
+          <div class="box box-warning">
+            <div class="box-header with-border">
+              <h3 class="box-title">Elementos Generales</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+           <form method ="post">
+             {% csrf_token %}
+             {{ form.as_p }}
+             <button class="btn btn-default" type="submit">Guardar</button>
+             <a class="btn btn-default" href=" {% url 'usuario_listar' %}">Cancelar</a>
+           </form>
+
+            </div>
+          </div>
+
+                {% endblock %}
