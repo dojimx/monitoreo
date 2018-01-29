@@ -16,7 +16,8 @@ class Usuario(models.Model):
 	sexo = models.CharField(null= True, blank=True, max_length=1, choices=SEX)
 	correo = models.EmailField()
 	telefono = models.CharField(max_length=14)
-	rol = models.CharField(null=True, blank=True, max_length=1, choices=ROL)
+	rol = models.CharField(null=True, blank=True, max_length=3, choices=ROL)
+	
 
 
 	def __str__(self):

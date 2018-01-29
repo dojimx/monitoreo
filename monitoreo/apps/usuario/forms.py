@@ -1,35 +1,29 @@
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from apps.usuario.models import Usuario
 
 
-class UsuarioForm(forms.ModelForm):
+class UsuarioForm(UserCreationForm):
 
 	class Meta: 
-		model = Usuario 
+		model = User
 
 		fields = [
-			'nombre',
-			'apellido_paterno',
-			'apellido_materno',
-			'sexo',
-			'correo',
-			'telefono',
+			'username',
+			'first_name',
+			'last_name',
+			'email',
+			
+			
 			
 		]
 		labels = {
-			'nombre' : 'Nombre',
-			'apellido_paterno' : 'Apellido Paterno',
-			'apellido_materno' : 'Apellido Materno',
-			'sexo' : 'Sexo',
-			'correo' : 'Correo',
-			'telefono' : 'Telefono',
-			
+			'username' : 'Usuario',
+			'first_name' : 'Nombre',
+			'last_name' : 'Apellido',
+			'email' : 'Correo',
+
 					}
-		widgets = {
-			'nombre' : forms.TextInput(attrs={'class' : 'form-control'}),
-			'apellido_paterno' : forms.TextInput(attrs={'class' : 'form-control'}),
-			'apellido_materno' : forms.TextInput(attrs={'class' : 'form-control'}),
-			'sexo' : forms.Select(attrs={'class' : 'form-control'}),
-			'correo' : forms.TextInput(attrs={'class' : 'form-control'}),
-			'telefono' : forms.TextInput(attrs={'class' : 'form-control'}),
-		}
+		
+		
