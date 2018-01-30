@@ -35,7 +35,6 @@ class UsuarioForm(UserCreationForm):
 			'email' : forms.TextInput(attrs={'class' : 'form-control'}),
 			'password1' : forms.TextInput(attrs={'class' : 'form-control'}),
 			'password2' : forms.TextInput(attrs={'class' : 'form-control'}),
-
 			
 		}
 
