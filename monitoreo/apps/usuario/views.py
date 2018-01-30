@@ -12,7 +12,8 @@ from apps.usuario.forms import UsuarioForm
 
 
 class UsuarioList(ListView):
-	model = Usuario
+	model = User
+	form_class = UsuarioForm
 	template_name = 'usuario/listar.html'
 
 class UsuarioCreate(CreateView):
@@ -22,13 +23,13 @@ class UsuarioCreate(CreateView):
 	success_url = reverse_lazy ('usuario_listar')
 
 class UsuarioUpdate(UpdateView):
-	model = Usuario
+	model = User
 	form_class = UsuarioForm
-	template_name = 'usuario/nuevo.html'
+	template_name = 'usuario/editar.html'
 	success_url = reverse_lazy ('usuario_listar')
 
 class UsuarioDelete(DeleteView):
-	model = Usuario
+	model = User
 	form_class = UsuarioForm
 	template_name = 'usuario/eliminar.html'
 	success_url = reverse_lazy ('usuario_listar')
