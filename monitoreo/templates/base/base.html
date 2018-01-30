@@ -28,10 +28,11 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
+{% csrf_token %}
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="#" class="logo">
+    <a href="{% url 'index_principal' %}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>M</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -104,7 +105,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="{% static 'img/de.jpg' %}" class="user-image" alt="User Image">
-              <span class="hidden-xs">demon salvatore</span>
+              <span class="hidden-xs">{{request.user.username}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -112,7 +113,8 @@
                 <img src="{% static 'img/de.jpg' %}" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
+                  
+                  {{request.user.username}}
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -137,7 +139,7 @@
                   <a href="#" class="btn btn-default btn-flat">Perfil</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Salir</a>
+                  <a href="{% url 'logout' %}" class="btn btn-default btn-flat">Salir</a>
                 </div>
               </li>
             </ul>
@@ -170,7 +172,7 @@
           
           <ul class="sidebar-menu">
             <li class="sidebar-menu">
-              <a href="#">
+              <a href="{% url 'index_principal' %}">
                 <i class="fa fa-rebel"></i> 
                 <span>Inicio</span> 
                   <span class="pull-right-container">

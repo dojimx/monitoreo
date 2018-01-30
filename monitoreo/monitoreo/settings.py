@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'apps.medio',
     'apps.monitoreo',
     'apps.usuario',
+    'apps.principal'
 ]
 
 MIDDLEWARE = [
@@ -127,4 +128,6 @@ STATIC_ROOT = 'staticfiles'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
-LOGIN_REDIRECT_URL = reverse_lazy ('usuario_listar')
+LOGIN_REDIRECT_URL = reverse_lazy ('index_principal')
+
+LOGOUT_REDIRECT_URL = reverse_lazy ('login')
