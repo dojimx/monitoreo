@@ -1,0 +1,76 @@
+{% extends 'base/base.html' %}
+
+ {% block seccion %}
+      <h1>
+        Monitoreo
+        <small>Crear</small>
+      </h1>
+      {% endblock %}
+
+  {% block title %} 
+    <title>Monitoreo - Nuevo</title> 
+  {% endblock %}
+
+    {% block breadcrumb %}
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
+        <li><a href="#">Monitoreo</a></li>
+        <li class="active" href="#">Nuevo</li>
+      </ol>
+     {% endblock %}
+
+{% block content %}
+<!-- general form elements disabled -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+          
+            <div class="box-header with-border">
+              <h3 class="box-title">Datos Generales</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+             <form method ="post">
+               {% csrf_token %}
+               <!--{{ form.as_p }} -->
+
+                <div class="form-group">
+                  <label>Nombre</label>
+                  <input type="text" name="first_name" class="form-control" placeholder="Monitoreo...">
+                </div>
+
+                <div class="form-group">
+                  <label>Apellidos</label>
+                  <input type="text" name="last_name" class="form-control" placeholder="Apellido ...">
+                </div>
+
+                <div class="form-group">
+                  <label>Username</label>
+                  <input type="text" name="username" class="form-control" placeholder="Apellido ...">
+                </div>
+
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" name="email" class="form-control" placeholder="Email ...">
+                </div>
+
+               <div class="form-group">
+                  <label>Contraseña</label>
+                  <input type="password" name="password1" class="form-control" placeholder="Contraseña...">
+                </div>
+               <div class="form-group">
+                  <label>Confirmar Contraseña</label>
+                  <input type="password" name="password2" class="form-control" placeholder="Contraseña ...">
+                </div>
+
+               <button class="btn btn-default" type="submit">Guardar</button>
+               <a class="btn btn-default" href="#">Cancelar</a>
+             </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
