@@ -37,7 +37,7 @@
                   <th>Sitio Web</th>
                   <th>Tipo</th>
                   <th>Usuario encargado</th>
-                  <th>Acciones a realizar</th>
+                  <th>Acciones</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -49,7 +49,7 @@
                   <td>{{medio.tipo}}</td>
 
                   <td>{{medio.usuario}} {{medio.usuario.apellido_paterno}} {{medio.usuario.apellido_materno}}</td>
-                  <td> <a class="btn btn-primary" href="{% url 'medio_editar' medio.id %}">Editar</a>  <a class="btn btn-primary" href="{% url 'medio_eliminar' medio.id %}">Eliminar</a></td>                
+                  <td> <a class="fa fa-pencil" href="{% url 'medio_editar' medio.id %}"></a>  |  <a class="fa fa-trash" href="{% url 'medio_eliminar' medio.id %}"></a></td>                
                  
                  
                     
