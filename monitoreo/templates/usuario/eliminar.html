@@ -3,7 +3,7 @@
 {% block content %}
 <form method ="post">
              {% csrf_token %}
-             <h3>¿desas eliminar el usuario <strong>{{usuario.nombre}}</strong>?</h3>
+             <h3>¿desas eliminar el usuario <strong>{{user.username}}</strong>?</h3>
              <button class="btn btn-danger" type="submit">Eliminar</button>
              <a class="btn btn-default" href=" {% url 'usuario_listar' %}">Cancelar</a>
            </form>
