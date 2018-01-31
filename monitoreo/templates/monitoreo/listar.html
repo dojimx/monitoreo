@@ -14,8 +14,8 @@
     {% block breadcrumb %}
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
-        <li><a href="{% url '' %}">monitoreos</a></li>
-        <li class="active" href="{% url ''  %}">Listar</li>
+        <li><a href="#">monitoreos</a></li>
+        <li class="active" href="#">Listar</li>
       </ol>
      {% endblock %}
 
@@ -29,14 +29,9 @@
               <a type="button" class="btn btn-primary" href=" {% url 'monitoreo_crear' %}">Añadir</a>
             </div>
 
-            <div class="col-md-6">
-          <div class="box box-primary">
-            <div class="box-header">
-              <h3 class="box-title">Date picker</h3>
-            </div>
-            <!-- Date range -->
-              <div class="form-group">
-                <label>Rango fecha:</label>
+
+                <div class="form-group">
+                <label>Rango de fecha:</label>
 
                 <div class="input-group">
                   <div class="input-group-addon">
@@ -52,28 +47,25 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Nombre</th>
-                  <th>Sitio Web</th>
-                  <th>Tipo</th>
-                  <th>Usuario encargado</th>
-                  <th>Acciones a realizar</th>
+                  <th>Fecha de Publicación</th>
+                  <th>Titulo</th>
+                  <th>Medio</th>
+                  <th>URL</th>
+                  <th>Publicación</th>
+                  <th>Acciones </th>
                 </tr>
                 </thead>
                 <tbody>
                   {% if object_list %}
                   {% for monitoreo in object_list %}
                 <tr>
-                  <td>{{monitoreo.nombre}}</td>
+                  <td>{{monitoreo.fecha_publicacion}}</td>
+                  <td>{{monitoreo.titulo}}</td>
+                  <td>{{monitoreo.usuario}}</td>
                   <td>{{monitoreo.url}}</td>
-                  <td>{{monitoreo.tipo}}</td>
-
-                  <td>{{monitoreo.usuario}} {{monitoreo.usuario.apellido_paterno}} {{monitoreo.usuario.apellido_materno}}</td>
-                  <td> <a class="btn btn-primary" href="{% url 'monitoreo_editar' monitoreo.id %}">Editar</a>  <a class="btn btn-primary" href="{% url 'monitoreo_eliminar' monitoreo.id %}">Eliminar</a></td>                
+                  <td>{{monitoreo.publicacion}}</td>
+                  <td> <a class="fa fa-pencil" href="{% url 'monitoreo_editar' monitoreo.id %}"></a>  |  <a class="fa fa-trash" href="{% url 'monitoreo_eliminar' monitoreo.id %}"></a></td>                
                  
-                 
-                    
-
-
                 </tr>
                 {% endfor %}
                 
@@ -84,6 +76,7 @@
                 
               </tbody>
               </table>
+
             </div>
             <!-- /.box-body -->
           </div>
