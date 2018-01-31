@@ -49,7 +49,7 @@
                   <td>{{usuario.username}}</td>
                   <td> {{usuario.first_name}} {{usuario.last_name}}</td>
                   <td>{{usuario.email}}</td>
-                  <td>{{usuario.acciones}} <a class="btn btn-primary" href="{% url 'usuario_editar' usuario.id %}">Editar</a>  <a class="btn btn-primary" href="{% url 'usuario_eliminar' usuario.id %}">Eliminar</a></td>                
+                  <td>{{usuario.acciones}} <a class="fa fa-pencil" href="{% url 'usuario_editar' usuario.id %}"></a>     |     <a class="fa fa-trash" href="{% url 'usuario_eliminar' usuario.id %}"></a></td>                
                  
                  
                     
