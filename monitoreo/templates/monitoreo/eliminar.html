@@ -3,7 +3,7 @@
 {% block content %}
 <form method ="post">
              {% csrf_token %}
-             <h3>¿desas eliminar ? <strong>{{monitoreo.nombre}}</strong>?</h3>
+             <h3>¿desas eliminar la publicación con el titulo: <strong>{{monitoreo.titulo}}</strong>?</h3>
              <button class="btn btn-danger" type="submit">Eliminar</button>
              <a class="btn btn-default" href=" {% url 'monitoreo_listar' %}">Cancelar</a>
            </form>
