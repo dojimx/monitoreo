@@ -29,11 +29,15 @@
               <a type="button" class="btn btn-primary" href=" {% url 'monitoreo_crear' %}">Añadir</a>
             </div>
 
-
+             <!-- /.rango de fecha -->
                 <div class="form-group">
                 <label>Rango de fecha:</label>
 
                 <div class="input-group">
+                  <form action="" method="get"> 
+        {{ form.as_p }} 
+                 </form> 
+
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
