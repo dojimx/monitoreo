@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
+from apps.medio.models import Medio
 from apps.monitoreo.models import Monitoreo
 from apps.monitoreo.forms import MonitoreoForm
 
@@ -29,5 +30,7 @@ class MonitoreoDelete(DeleteView):
 	form_class = MonitoreoForm
 	template_name = 'monitoreo/eliminar.html'
 	success_url = reverse_lazy ('monitoreo_listar')
+
+
 
 # Create your views here.

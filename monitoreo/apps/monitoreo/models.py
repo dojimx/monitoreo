@@ -14,7 +14,9 @@ class Monitoreo(models.Model):
 	publicacion = models.CharField(max_length=8, choices=PUBL)
 	descripcion = models.TextField()
 	fecha_publicacion = models.DateField()
-	usuario = models.ForeignKey(Medio, null=True, blank=True, on_delete=models.CASCADE)
+	medio = models.ForeignKey(Medio, null=True, blank=True, on_delete=models.CASCADE)
+
+
 	
 
 
