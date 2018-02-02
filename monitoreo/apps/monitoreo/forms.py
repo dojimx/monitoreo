@@ -35,7 +35,5 @@ class MonitoreoForm(forms.ModelForm):
 			'medio' : forms.Select(attrs={'class' : 'form-control'}),
 			
 		}
-
-		class NombreForm(forms.Form): 
-        fecha_desde = forms.DateField() 
-        fecha_hasta = forms.DateField() 
+		
+		
