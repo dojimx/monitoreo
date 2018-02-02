@@ -15,7 +15,7 @@ class MonitoreoForm(forms.ModelForm):
 			'publicacion',
 			'descripcion',
 			'fecha_publicacion',
-			'usuario',
+			'medio',
 			
 		]
 		labels = {
@@ -24,7 +24,7 @@ class MonitoreoForm(forms.ModelForm):
 			'publicacion': 'Publicacion',
 			'descripcion' : 'Descripcion',
 			'fecha_publicacion' : 'Fecha de publicacion',
-			'usuario' : 'Usuario',
+			'medio' : 'Medio',
 			
 		}
 		widgets = {
@@ -33,7 +33,7 @@ class MonitoreoForm(forms.ModelForm):
 			'publicacion' : forms.Select(attrs={'class' : 'form-control'}),
 			'descripcion' : forms.TextInput(attrs={'class' : 'form-control'}),
 			'fecha_publicacion' : forms.TextInput(attrs={'class' : 'form-control'}),
-			'usuario' : forms.Select(attrs={'class' : 'form-control'}),
+			'medio' : forms.Select(attrs={'class' : 'form-control'}),
 			
 		}
 		

@@ -2,6 +2,11 @@ from django.shortcuts import render
 import datetime
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+<<<<<<< HEAD
+=======
+
+from apps.medio.models import Medio
+>>>>>>> 445cf418a2fd278d1e9a4dffbb4bd9d411aa6b97
 from apps.monitoreo.models import Monitoreo
 from apps.monitoreo.forms import MonitoreoForm
 
@@ -30,6 +35,7 @@ class MonitoreoDelete(DeleteView):
 	template_name = 'monitoreo/eliminar.html'
 	success_url = reverse_lazy ('monitoreo_listar')
 
+<<<<<<< HEAD
 
 #def busqueda(request):
 #    error = False
@@ -65,3 +71,22 @@ def b1(request):
 
     
 
+=======
+<<<<<<< HEAD
+
+
+
+	def Monitoreo(request): 
+        form = TituloForm(request.GET or None), 
+        if form.is_valid(): 
+                fecha_desde = form.cleaned_data['fecha_desde'] 
+                fecha_hasta = form.cleaned_data['fecha_hasta'] 
+
+                monitoreo = monitoreo.objects.filter(fecha__range=(fecha_desde, 
+fecha_hasta)) 
+
+=======
+	
+>>>>>>> f7119f800b4f5615eff5c56e629a45a0e3593a2d
+# Create your views here.
+>>>>>>> 445cf418a2fd278d1e9a4dffbb4bd9d411aa6b97
