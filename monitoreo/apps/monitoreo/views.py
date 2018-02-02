@@ -30,4 +30,13 @@ class MonitoreoDelete(DeleteView):
 	template_name = 'monitoreo/eliminar.html'
 	success_url = reverse_lazy ('monitoreo_listar')
 
+	def Monitoreo(request): 
+        form = TituloForm(request.GET or None) 
+        if form.is_valid(): 
+                fecha_desde = form.cleaned_data['fecha_desde'] 
+                fecha_hasta = form.cleaned_data['fecha_hasta'] 
+
+                monitoreo = monitoreo.objects.filter(fecha__range=(fecha_desde, 
+fecha_hasta)) 
+
 # Create your views here.
