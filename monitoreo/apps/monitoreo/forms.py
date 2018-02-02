@@ -3,6 +3,7 @@ from apps.monitoreo.models import Monitoreo
 
 
 
+
 class MonitoreoForm(forms.ModelForm):
 
 	class Meta: 

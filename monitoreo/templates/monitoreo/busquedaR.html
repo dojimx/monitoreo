@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+{% block content %}
+{% if m1 %}
+<ul>
+{% for m in m1 %}
+<li>{{ m.titulo }}</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No se encontraron publicaciones en las fechas seleccionadas.</p>
+{% endif %}
+{% endblock %}
