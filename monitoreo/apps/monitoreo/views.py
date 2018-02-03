@@ -31,6 +31,13 @@ class MonitoreoDelete(DeleteView):
 	template_name = 'monitoreo/eliminar.html'
 	success_url = reverse_lazy ('monitoreo_listar')
 
+<<<<<<< HEAD
+=======
+
+
+<<<<<<< HEAD
+=======
+>>>>>>> 6fd0c2cefc7ea63a64ecca9c60a66246047791a8
 #def busqueda(request):
 #    error = False
 #    if 'date_from' and 'date_to'in request.GET:
@@ -62,4 +69,5 @@ def b1(request):
 
 
 
+>>>>>>> 93ac8ce77bf1f434268fb31051957bc01bfedffb
 # Create your views here.
