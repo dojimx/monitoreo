@@ -3,7 +3,6 @@ from django.db.models.signals import pre_save, post_save
 from apps.usuario.models import Usuario
 from django.conf import settings
 
-
 class Medio(models.Model):
 	NOTICE = (
 		('EST', 'ESTATAL'),
