@@ -31,9 +31,6 @@ class MonitoreoDelete(DeleteView):
 	template_name = 'monitoreo/eliminar.html'
 	success_url = reverse_lazy ('monitoreo_listar')
 
-<<<<<<< HEAD
-
-
 #def busqueda(request):
 #    error = False
 #    if 'date_from' and 'date_to'in request.GET:
@@ -47,9 +44,6 @@ class MonitoreoDelete(DeleteView):
 #    		m1 = Monitoreo.objects.filter(created__range=(date_from, date_to))
 #    		return render(request, 'monitoreo/busquedaR.html', {'m1': m1 })
 #    return render(request, 'monitoreo/busqueda.html')
-
-=======
->>>>>>> e8ea0302ce338526f5d3a9b14ef6c09bad030d08
 
 def b1(request):
     error = False
@@ -65,17 +59,7 @@ def b1(request):
             return render(request, 'monitoreo/busquedaR.html',{'m1': m1 })
     return render(request, 'monitoreo/busqueda.html', {'error': error})
 
-<<<<<<< HEAD
-	def Monitoreo(request): 
-        form = TituloForm(request.GET or None), 
-        if form.is_valid(): 
-                fecha_desde = form.cleaned_data['fecha_desde'] 
-                fecha_hasta = form.cleaned_data['fecha_hasta'] 
 
-                monitoreo = monitoreo.objects.filter(fecha__range=(fecha_desde, 
-fecha_hasta)) 
 
 
 # Create your views here.
-=======
->>>>>>> e8ea0302ce338526f5d3a9b14ef6c09bad030d08

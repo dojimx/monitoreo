@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 
+
 urlpatterns = [
    path('',  login_required(MedioList.as_view()), name='medio_listar'),
    path('nuevo/', login_required(MedioCreate.as_view()), name='medio_crear'),

@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
-
 from apps.medio.models import Medio
 from apps.medio.forms import MedioForm
 
