@@ -1,16 +1,57 @@
 {% extends 'base/base.html' %}
 
-{% block content %}
+      {% block seccion %}
+      <h1>
+        Busqueda
+        <small> de reportes</small>
+      </h1>
+      {% endblock %}
 
+  {% block title %} 
+    <title>Busqueda</title> 
+  {% endblock %}
+
+    {% block breadcrumb %}
+      <ol class="breadcrumb">
+        <li><a href="{% url 'index_principal' %}"><i class="fa fa-dashboard"></i>Inicio</a></li>
+        <li><a href="{% url 'monitoreo_listar' %}">Monitoreo</a></li>
+        <li><a href="#">Busqueda por Filtro</a></li>
+
+      </ol>
+     {% endblock %}
+
+
+{% block content %}
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+          
+            <div class="box-header with-border">
+              <h3 class="box-title">Rango de fechas</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
 <form  method="get">
-<table style="width:30%">
-<tr>
-<td><input type="text"  class="datepicker" name="q1"> </td>
-<td style="width:5%"> between </td>
-<td><input type="text"  class="datepicker" name="q2"></td>
-<br>
-<td><input type="submit" value="Search"></td>
-</tr>
-</table>
+              <div class="form-group">
+
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input name="q1" class="form-control" type="datetime" class="" id="datepicker">
+                  <input name="q2" class="form-control" type="datetime" class="" id="datepicker">
+                </div>
+                <!-- /.input group -->
+              </div>
+              <input type="submit" class="btn btn-primary"  value="Buscar"></td>
 </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
 {% endblock %}

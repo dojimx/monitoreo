@@ -13,8 +13,8 @@
 
     {% block breadcrumb %}
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
-        <li><a href="#">monitoreos</a></li>
+        <li><a href="{% url 'index_principal' %}"><i class="fa fa-dashboard"></i>Inicio</a></li>
+        <li><a href="{% url 'monitoreo_listar' %}">monitoreo</a></li>
         <li class="active" href="#">Listar</li>
       </ol>
      {% endblock %}
@@ -26,25 +26,9 @@
         <div class="col-xs-12">
          <div class="box">
             <div class="box-header">
-              <a type="button" class="btn btn-primary" href=" {% url 'monitoreo_crear' %}">Añadir</a>
+              <a type="button" class="btn btn-primary" href=" {% url 'monitoreo_crear' %}">Agregar Reporte</a>
+               <a type="button" class="btn btn-primary" href=" {% url 'busqueda' %}">Filtrar por Fecha</a>
             </div>
-
-             <!-- /.rango de fecha -->
-                <div class="form-group">
-                <label>Rango de fecha:</label>
-
-                <div class="input-group">
-                  
-
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input type="text" class="form-control pull-right" id="reservation">
-                  
-                </div>
-                <!-- /.input group -->
-              </div>
-
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
@@ -53,7 +37,7 @@
                   <th>Fecha de Publicación</th>
                   <th>Titulo</th>
                   <th>Medio</th>
-                  <th>URL</th>
+                  
                   <th>Publicación</th>
                   <th>Acciones </th>
                 </tr>
@@ -64,8 +48,8 @@
                 <tr>
                   <td>{{monitoreo.fecha_publicacion}}</td>
                   <td>{{monitoreo.titulo}}</td>
-                  <td>{{monitoreo.usuario}}</td>
-                  <td>{{monitoreo.url}}</td>
+                  <td>{{monitoreo.medio}}</td>
+                  
                   <td>{{monitoreo.publicacion}}</td>
                   <td> <a class="fa fa-pencil" href="{% url 'monitoreo_editar' monitoreo.id %}"></a>  |  <a class="fa fa-trash" href="{% url 'monitoreo_eliminar' monitoreo.id %}"></a></td>                
                  
@@ -73,7 +57,7 @@
                 {% endfor %}
                 
                 {% else %}
-                <h1> No hay registro de monitoreos</h1>
+                <h1> No hay registro de reportes</h1>
 
                 {% endif %}
                 

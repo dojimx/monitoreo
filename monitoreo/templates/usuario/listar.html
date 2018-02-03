@@ -13,9 +13,9 @@
 
     {% block breadcrumb %}
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
+        <li><a href="{% url 'index_principal' %}"><i class="fa fa-dashboard"></i>Inicio</a></li>
         <li><a href="{% url 'usuario_listar' %}">usuario</a></li>
-        <li class="active" href="{% url 'usuario_listar'  %}">Listar</li>
+        <li class="active" href="#">Listar</li>
       </ol>
      {% endblock %}
 
