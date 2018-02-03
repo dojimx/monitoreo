@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<form  method="get">
+<table style="width:30%">
+<tr>
+<td><input type="datetime"  class="datepicker" name="q1"> </td>
+<td style="width:5%"> between </td>
+<td><input type="datetime"  class="datepicker" name="q2"></td>
+<br>
+<td><input type="submit" value="Search"></td>
+</tr>
+</table>
+</form>
+
+             <!-- /.rango de fecha -->
+                <div class="form-group">
+               
+
+                <div class="input-group">
+                  
+
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="text" class="form-control pull-right" id="reservation">
+                  
+                </div>
+                <!-- /.input group -->
+              </div>
+
+
+
+{% endblock %}

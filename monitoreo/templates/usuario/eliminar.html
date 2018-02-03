@@ -1,11 +1,41 @@
 {% extends 'base/base.html' %}
 
+ {% block seccion %}
+      <h1>
+        Usuarios
+        <small>Eliminar</small>
+      </h1>
+      {% endblock %}
+
+  {% block title %} 
+    <title>Usuarios Eliminar</title> 
+  {% endblock %}
+
+      {% block breadcrumb %}
+      <ol class="breadcrumb">
+        <li><a href="{% url 'index_principal' %}"><i class="fa fa-dashboard"></i>Inicio</a></li>
+        <li><a href="{% url 'usuario_listar' %}">Usuarios</a></li>
+        <li class="active" href="">Eliminar</li>
+      </ol>
+     {% endblock %}
+
+
 {% block content %}
-<form method ="post">
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+         <div class="box">
+          <div class="box-body">
+          <form method ="post">
              {% csrf_token %}
              <h3>¿desas eliminar el usuario <strong>{{user.username}}</strong>?</h3>
              <button class="btn btn-danger" type="submit">Eliminar</button>
              <a class="btn btn-default" href=" {% url 'usuario_listar' %}">Cancelar</a>
-           </form>
+          </form>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
                  {% endblock %}          

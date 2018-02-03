@@ -26,13 +26,6 @@
      <link rel="stylesheet" href="{% static  '/select2/dist/css/select2.min.css' %}">
 
 
-
-
-
-
-
-
-    
 		 <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
@@ -114,18 +107,16 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{% static 'img/de.jpg' %}" class="user-image" alt="User Image">
+             
               <span class="hidden-xs">{{request.user.username}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="{% static 'img/de.jpg' %}" class="img-circle" alt="User Image">
-
                 <p>
                   
                   {{request.user.username}}
-                  <small>Member since Nov. 2012</small>
+                 
                 </p>
               </li>
               <!-- Menu Body -->
@@ -153,7 +144,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src= "{% static 'img/de.jpg' %}" class="img-circle" alt="User Image">
+         
         </div>
         <div class="pull-left info">
           
@@ -288,51 +279,6 @@
 <!-- iCheck 1.0.1 -->
 <script src="/static/iCheck/icheck.min.js"></script>
 
-<script>
-  $(function () {
-    //Initialize Select2 Elements
-  
-
-    //Date range picker
-    $('#reservation').daterangepicker()
-    //Date range picker with time picker
-    $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' })
-    //Date range as a button
-    $('#daterange-btn').daterangepicker(
-      {
-        ranges   : {
-          'Today'       : [moment(), moment()],
-          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
-          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
-          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        },
-        startDate: moment().subtract(29, 'days'),
-        endDate  : moment()
-      },
-      function (start, end) {
-        $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
-        
-      }
-    )
-
-
-
-    //Date picker
-    $('#datepicker').datepicker({
-      autoclose: true
-    })
-
-
-
-
-    //Timepicker
-    $('.timepicker').timepicker({
-      showInputs: false
-    })
-  })
-</script>
 {% endblock %}
 </body>
 </html>
