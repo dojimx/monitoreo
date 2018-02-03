@@ -9,8 +9,8 @@ class Monitoreo(models.Model):
 		('NEUTRAL', 'NEUTRAL'),
 		('NEGATIVO', 'NEGATIVO'),
 		)
-	titulo = models.CharField(null=True, blank=True, max_length=100)
-	url = models.URLField(max_length=50)
+	titulo = models.CharField(null=True, blank=True, max_length=200)
+	url = models.URLField(max_length=200)
 	publicacion = models.CharField(max_length=8, choices=PUBL)
 	descripcion = models.TextField()
 	fecha_publicacion = models.DateField()
@@ -22,3 +22,5 @@ class Monitoreo(models.Model):
 
 	def __str__(self):
 		return self.titulo
+
+		

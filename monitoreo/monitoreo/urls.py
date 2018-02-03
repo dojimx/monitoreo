@@ -22,7 +22,6 @@ urlpatterns = [
     path('medio/', include('apps.medio.urls')),
     path('monitoreo/', include('apps.monitoreo.urls')),
     path('usuario/', include('apps.usuario.urls')),
-    
     path('principal/', include('apps.principal.urls')),
     path('',login, {'template_name':'login.html'}, name='login'),
     path('accounts/login/',login, {'template_name':'login.html'}, name='login'),

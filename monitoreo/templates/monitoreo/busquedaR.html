@@ -2,20 +2,22 @@
 
       {% block seccion %}
       <h1>
-        Monitoreo
-        <small>Listar</small>
+        Reportes
+        <small> Encontrados</small>
       </h1>
       {% endblock %}
 
   {% block title %} 
-    <title>Monitoreo - Listar</title> 
+    <title>Busqueda</title> 
   {% endblock %}
 
     {% block breadcrumb %}
       <ol class="breadcrumb">
         <li><a href="{% url 'index_principal' %}"><i class="fa fa-dashboard"></i>Inicio</a></li>
-        <li><a href="{% url 'monitoreo_listar' %}">monitoreo</a></li>
-        <li class="active" href="#">Listar</li>
+        <li><a href="{% url 'monitoreo_listar' %}">Monitoreo</a></li>
+        <li><a href="{% url 'busqueda' %}">Busqueda por Filtro</a></li>
+        <li><a href="">Resultados</a></li>
+
       </ol>
      {% endblock %}
 
@@ -29,6 +31,7 @@
               <a type="button" class="btn btn-primary" href=" {% url 'monitoreo_crear' %}">Agregar Reporte</a>
                <a type="button" class="btn btn-primary" href=" {% url 'busqueda' %}">Filtrar por Fecha</a>
             </div>
+
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
@@ -37,27 +40,27 @@
                   <th>Fecha de Publicación</th>
                   <th>Titulo</th>
                   <th>Medio</th>
-                  
+                  <th>URL</th>
                   <th>Publicación</th>
-                  <th>Acciones </th>
+
                 </tr>
                 </thead>
                 <tbody>
-                  {% if object_list %}
-                  {% for monitoreo in object_list %}
+                  {% if m1 %}
+                  {% for m in m1 %}
                 <tr>
-                  <td>{{monitoreo.fecha_publicacion}}</td>
-                  <td>{{monitoreo.titulo}}</td>
-                  <td>{{monitoreo.medio}}</td>
-                  
-                  <td>{{monitoreo.publicacion}}</td>
-                  <td> <a class="fa fa-pencil" href="{% url 'monitoreo_editar' monitoreo.id %}"></a>  |  <a class="fa fa-trash" href="{% url 'monitoreo_eliminar' monitoreo.id %}"></a></td>                
+                  <td>{{m.fecha_publicacion}}</td>
+                  <td>{{m.titulo}}</td>
+                  <td>{{m.medio}}</td>
+                  <td>{{m.url}}</td>
+                  <td>{{m.publicacion}}</td>
+                              
                  
                 </tr>
                 {% endfor %}
                 
                 {% else %}
-                <h1> No hay registro de reportes</h1>
+                <h1> No hay registros de reportes</h1>
 
                 {% endif %}
                 
